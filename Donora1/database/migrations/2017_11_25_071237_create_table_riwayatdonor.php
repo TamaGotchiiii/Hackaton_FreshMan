@@ -17,7 +17,8 @@ class CreateTableRiwayatDonor extends Migration
             $table->increments('id');
             $table->integer('id_pendonor')->unsigned();
             $table->foreign('id_pendonor')->references('id')->on('pendonor');
-            $table->timestamp('tanggal_donor')->nullable();
+            $table->timestamps();
+
         });
     }
 

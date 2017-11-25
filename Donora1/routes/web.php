@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', function () {
+    return view('dosen.awal');
+});
+
+Route::get('rumahsakit', 'RumahSakitController@index');
+Route::get('rumahsakit/tambah','RumahSakitController@create');
+Route::post('rumahsakit/simpan','RumahSakitController@store');
+Route::get('rumahsakit/edit/{rumahsakit}','RumahSakitController@edit');
+Route::post('rumahsakit/edit/{rumahsakit}','RumahSakitController@update');
+Route::get('rumahsakit/lihat/{rumahsakit}','RumahSakitController@show');
+Route::get('rumahsakit/hapus/{rumahsakit}','RumahSakitController@destroy');

@@ -18,7 +18,8 @@ class CreateTableAdmin extends Migration
             $table->string('nama');
             $table->string('password');
             $table->string('username');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
+
         });
     }
 

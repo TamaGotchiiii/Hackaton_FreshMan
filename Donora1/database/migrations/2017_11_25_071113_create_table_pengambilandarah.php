@@ -22,7 +22,8 @@ class CreateTablePengambilandarah extends Migration
             $table->integer('id_rumahsakit')->unsigned();
             $table->foreign('id_rumahsakit')->references('id')->on('rumahsakit');
             $table->string('lampiran');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
+
         });
     }
 

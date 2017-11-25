@@ -18,7 +18,8 @@ class CreateTableRumahSakit extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('no_tlp');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
+
         });
     }
 

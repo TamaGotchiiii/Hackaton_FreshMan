@@ -17,7 +17,8 @@ class CreateTableJenisdarah extends Migration
             $table->increments('id');
             $table->string('jenis_darah');
             $table->integer('stok');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
+
         });
     }
 

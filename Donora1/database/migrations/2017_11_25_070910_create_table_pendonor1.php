@@ -24,7 +24,8 @@ class CreateTablePendonor1 extends Migration
             $table->foreign('id_jenisdarah')->references('id')->on('jenisdarah');
             $table->string('status_kesediaan');
             $table->string('level')->nullable();
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
+
         });
     }
 
