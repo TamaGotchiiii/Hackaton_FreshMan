@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 
-
+<!-- 
+  Theme Name: Enlight
+  Theme URL: https://probootstrap.com/enlight-free-education-responsive-bootstrap-website-template
+  Author: ProBootstrap.com
+  Author URL: https://probootstrap.com
+  License: Released for free under the Creative Commons Attribution 3.0 license (probootstrap.com/license)
+-->
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Donora</title>
+    <title>DONORA</title>
     <meta name="description" content="Free Bootstrap Theme by ProBootstrap.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
     
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('donora/css/styles-merged.css')}}">
-    <link rel="stylesheet" href="{{asset('donora/css/style.min.css')}}">
-    <link rel="stylesheet" href="{{asset('donora/css/custom.css')}}">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 
-    
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
 
     
+    
     <div class="probootstrap-page-wrapper">
       <!-- Fixed navbar -->
       
-       <div class="probootstrap-header-top">
+ <div class="probootstrap-header-top">
         <div class="container">
           <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
@@ -53,60 +63,66 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html" title="ProBootstrap:Enlight">DONORA</a>
+            <a class="navbar-brand" href="index.html" title="ProBootstrap:Enlight">Enlight</a>
           </div>
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="index.html">Home</a></li>
-            
-                  <li><a href="{{url('/pengambilandarah')}}">Pengambilan Darah</a></li>
+              <li ><a href="index.html">Home</a></li>
+             <li class="active" ><a href="pengambilan_darah">Pengambilan Darah</a></li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <section class="flexslider">
-        <ul class="slides">
-          <li style="background-image: url({{asset('donora/img/donora.jpg')}})" class="overlay">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <div class="probootstrap-slider-text text-center">
-                    <h1 class="probootstrap-heading probootstrap-animate"></h1>
-                  </div>
+      <section class="probootstrap-section probootstrap-section-sm">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+         
+                  
+                <div class="col-md-8 col-md-push-2  probootstrap-animate" id="probootstrap-content">
+                  <h2>Form Pengambilan Darah</h2>
+                  <p>Untuk Mengambil darah anda di minta untuk mengisi data dibawah ini</p>
+                  <form action="#" method="post" class="probootstrap-form">
+                    <div class="form-group">
+                      <label for="name">Nama Wali</label>
+                      <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                     <div class="form-group">
+                      <label for="NIK">NIK Wali</label>
+                      <input type="text" class="form-control" id="nik" name="nik">
+                    </div>
+                      <div class="form-group">
+                      <label for="No_Tlp">Nomor Wali Yang bisa Dihubungi</label>
+                      <input type="text" class="form-control" id="tlp" name="tlp">
+                    </div>
+                     <div class="form-group">
+                      <label for="name">Nama Pasien</label>
+                      <input type="text" class="form-control" id="namepasien" name="namepasien">
+                    </div>
+                     <div class="form-group">
+                      <label for="name">Rumah Sakit Pasien Saat Ini</label>
+                     <select name=""><option value=""></option></select>
+                    </div>
+                    <div class="form-group">
+                      <label for="subject">Subject</label>
+                      <input type="text" class="form" id="subject" name="subject">
+                      <input type="button" class="btn " name="upload" value="upload">
+                    </div>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="Send Message">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-          </li>
-          <li style="background-image: url({{asset('donora/img/donora1.jpg')}})" class="overlay">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <div class="probootstrap-slider-text text-center">
-                    <h1 class="probootstrap-heading probootstrap-animate"></h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </li>
-          <li style="background-image: url({{asset('donora/img/donora2.jpg')}})" class="overlay">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                  <div class="probootstrap-slider-text text-center">
-                    <h1 class="probootstrap-heading probootstrap-animate"></h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
       
-  
-      <footer class="probootstrap-footer probootstrap-bg">
+     
+       <footer class="probootstrap-footer probootstrap-bg">
         <div class="container">
           <div class="row">
             <div class="col-md-4">
@@ -137,7 +153,7 @@
               <div class="probootstrap-footer-widget">
                 <h3>Contact Info</h3>
                 <ul class="probootstrap-contact-info">
-                  <li><i class="icon-location2"></i> <span>Jalan. Palang Merah Indonesia no.1 Samarinda Kalimantan Timur</span></li>
+                  <li><i class="icon-location2"></i> <span>Jalan Palang Merah Indonesia no.1 Samarinda Kalimantan Timur</span></li>
                   <li><i class="icon-mail"></i><span>donora_pmi@gmail.com</span></li>
                   <li><i class="icon-phone2"></i><span>(0541) 732261</span></li>
                 </ul>
@@ -163,13 +179,14 @@
         </div>
       </footer>
 
+
     </div>
     <!-- END wrapper -->
     
 
-    <script src="{{asset('donora/js/scripts.min.js')}}"></script>
-    <script src="{{asset('donora/js/main.min.js')}}"></script>
-    <script src="{{asset('donora/js/custom.js')}}"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/custom.js"></script>
 
   </body>
 </html>

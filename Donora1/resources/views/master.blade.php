@@ -67,10 +67,8 @@
 
           <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="index.html">Home</a></li>
-            
-                  <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="{{url('/rumahsakit')}}">Rumah Sakit</a></li>
+              <li><a href="{{url('/darah')}}">Pengambilan Darah</a></li>
             </ul>
           </div>
         </div>

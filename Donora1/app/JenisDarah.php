@@ -12,4 +12,9 @@ class JenisDarah extends Model
     public function Pendonor(){
     	return $this->hasMany(pendonor::class,'id_jenisdarah');
     }
+
+    public function PengambilanDarah(){
+    	return $this->hasMany(PengambilanDarah::class);
+
+    }
 }

@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\rumahsakit;
+use App\PengambilanDarah;
+use App\JenisDarah;
 
-class RumahSakitController extends Controller
+class PengambilanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     protected $informasi = 'Gagal Melakukan Aksi';
     protected $guarded = ['id'];
     public function index()
     {
-        $semuaRumahSakit = rumahsakit::all();
-        return view('rumahsakit.awal', compact('semuaRumahSakit'));       
+        $semuaPengambilan = PengambilanDarah::all();
+        $jenisdarah = JenisDarah::all();
+        return view('pengambilandarah.awal', compact('semuaPengambilan','jenisdarah'));    
     }
 
     /**
@@ -28,7 +29,7 @@ class RumahSakitController extends Controller
      */
     public function create()
     {
-        return view('rumahsakit.tambah');
+        //
     }
 
     /**
@@ -39,14 +40,18 @@ class RumahSakitController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $rumahsakit = new rumahsakit();
-        $rumahsakit->nama=$request->nama;
-        $rumahsakit->alamat=$request->alamat;
-        $rumahsakit->no_tlp=$request->no_tlp;
+        $pengambilan = new PengambilanDarah();
+        $pengambilan->nama_pemesan=$request->nama_pemesan;
+        $pengambilan->nik_pemesan=$request->nik_pemesan;
+        $pengambilan->no_tlp_pemesan=$request->no_tlp_pemesan;
+        $pengambilan->nama_pasien = $request->nama_pasien;
+        $pengambilan->id_rumahsakit = $request->id_rumahsakit;
+        $pengambilan->id_golongan = $request->id_golongan;
+        $pengambilan->status = "Belum Di Approve";
 
-        if($rumahsakit->save()) $this->informasi = "Data Rumah Sakit Telah Diperbarui!!";
-        return redirect('rumahsakit')->with(['informasi'=>$this->informasi]);
+        
+        if($pengambilan->save()) $this->informasi = "Data Rumah Sakit Telah Diperbarui!!";
+        return redirect('/')->with(['informasi'=>$this->informasi]);
     }
 
     /**
@@ -57,8 +62,7 @@ class RumahSakitController extends Controller
      */
     public function show($id)
     {
-        $rumahsakit = rumahsakit::find($id);
-        return view('rumahsakit.lihat')->with(array('rumahsakit'=>$rumahsakit));
+        //
     }
 
     /**
@@ -69,8 +73,7 @@ class RumahSakitController extends Controller
      */
     public function edit($id)
     {
-        $rumahsakit = rumahsakit::find($id);
-        return view('rumahsakit.edit')->with(array('rumahsakit'=>$rumahsakit));
+        //
     }
 
     /**
@@ -82,14 +85,7 @@ class RumahSakitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rumahsakit = rumahsakit::find($id);
-        $rumahsakit->nama = $request->nama;
-        $rumahsakit->alamat = $request->alamat;
-        $rumahsakit->no_tlp = $request->no_tlp;
-
-
-        if($rumahsakit->save()) $this->informasi = "Data Rumah Sakit Telah Diperbarui!!";
-        return redirect('rumahsakit')->with(['informasi'=>$this->informasi]);
+        //
     }
 
     /**
@@ -100,8 +96,6 @@ class RumahSakitController extends Controller
      */
     public function destroy($id)
     {
-        $rumahsakit=rumahsakit::find($id);
-        $informasi=$rumahsakit->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
-        return redirect('rumahsakit')->with(['informasi'=>$informasi]);
+        //
     }
 }
